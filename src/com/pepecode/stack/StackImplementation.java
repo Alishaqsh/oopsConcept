@@ -15,12 +15,12 @@ public class StackImplementation {
 			//Run time  polymorphism 
 		    StackInteface st = new CustomStack(n);
 
-		    executeStack(br, st);
+		    executeStack(br,st);
 		    
 		  //Run time  polymorphism 
 		    StackInteface st2 = new DynamicStack(n);
 
-		    executeStack(br, st2);
+		    executeStack(br,st2);
 		    
 			} catch (NumberFormatException e) {
 				e.printStackTrace();

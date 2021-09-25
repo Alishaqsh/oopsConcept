@@ -1,22 +1,15 @@
 package com.pepecode.stack;
 
-public class DynamicStack implements StackInteface {
+public class DynamicStack extends CustomStack implements StackInteface{
 
 	NormalStack st = null;
 
 	public DynamicStack(int cap) {
+		super(cap);
 		st = new NormalStack(new int[cap], -1, 0);
 	}
 
-	@Override
-	public void display() {
-		int[] data = st.getData();
-		for (int i = st.getTos(); i >= 0; i--) {
-			System.out.print(data[i] + " ");
-		}
-		System.out.println();
 
-	}
 
 	@Override
 	public void push(int val) throws StackException {
