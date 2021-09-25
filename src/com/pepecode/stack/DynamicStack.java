@@ -1,6 +1,6 @@
 package com.pepecode.stack;
 
-public class DynamicStack extends CustomStack implements StackInteface{
+public class DynamicStack extends CustomStack{
 
 
 	public DynamicStack(int cap) {
