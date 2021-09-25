@@ -13,9 +13,9 @@ public class StackImplementation {
 			try {
 			n = Integer.parseInt(br.readLine());
 			//Run time  polymorphism 
-		    StackInteface st = new CustomStack(n);
+		  //  StackInteface st = new CustomStack(n);
 
-		    executeStack(br, st);
+		   // executeStack(br, st);
 		    
 		  //Run time  polymorphism 
 		    StackInteface st2 = new DynamicStack(n);

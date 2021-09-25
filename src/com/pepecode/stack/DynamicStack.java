@@ -2,11 +2,9 @@ package com.pepecode.stack;
 
 public class DynamicStack extends CustomStack implements StackInteface{
 
-	NormalStack st = null;
 
 	public DynamicStack(int cap) {
 		super(cap);
-		st = new NormalStack(new int[cap], -1, 0);
 	}
 
 
