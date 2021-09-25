@@ -30,28 +30,6 @@ public class DynamicStack extends CustomStack implements StackInteface{
 		}
 	}
 
-	@Override
-	public int size() {
-		return st.getSize();
-	}
-
-	@Override
-	public int pop() throws StackException {
-		if (st.getTos() == -1) {
-			 throw new StackException("Stack underflow");
-		}
-		int removedValue = st.removeElement();
-		return removedValue;
-	}
-
-	@Override
-	public int top() throws StackException {
-		if (st.getTos() == -1) {
-			 throw new StackException("Stack underflow");
-		}
-
-		int topElement = st.getElement();
-		return topElement;
-	}
+	
 
 }
