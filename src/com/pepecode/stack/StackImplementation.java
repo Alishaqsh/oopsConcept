@@ -15,45 +15,59 @@ public class StackImplementation {
 			//Run time  polymorphism 
 		    StackInteface st = new CustomStack(n);
 
-		    executeStack(br,st);
+		    executeStack(br, st);
 		    
 		  //Run time  polymorphism 
 		    StackInteface st2 = new DynamicStack(n);
 
-		    executeStack(br,st2);
+		    executeStack(br, st2);
 		    
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
-			}catch ( StackException e) {
-				System.out.print(e.getMessage());
 			}
 		  }
 	
 	//complitime polymorphism
-	private static void executeStack(BufferedReader br, StackInteface st) throws IOException, StackException {
+	private static void executeStack(BufferedReader br, StackInteface st) throws IOException {
 		String str = br.readLine();
 		while (str.equals("quit") == false) {
-		  if (str.startsWith("push")) {
-		    int val = Integer.parseInt(str.split(" ")[1]);
-		    st.push(val);
-		  } else if (str.startsWith("pop")) {
-		    int val = st.pop();
-		    if (val != -1) {
-		      System.out.println(val);
-		    }
-		  } else if (str.startsWith("top")) {
-		    int val = st.top();
-		    if (val != -1) {
-		      System.out.println(val);
-		    }
-		  } else if (str.startsWith("size")) {
-		    System.out.println(st.size());
-		  } else if (str.startsWith("display")) {
-		    st.display();
-		  }
-		  str = br.readLine();
+			if (str.startsWith("push")) {
+				int val = Integer.parseInt(str.split(" ")[1]);
+				try {
+					st.push(val);
+				} catch (StackException e) {
+					System.out.println(e.getMessage());
+				}
+			} else if (str.startsWith("pop")) {
+				int val;
+				try {
+					val = st.pop();
+					if (val != -1) {
+						System.out.println(val);
+					}
+				} catch (StackException e) {
+					System.out.println(e.getMessage());
+				}
+
+			} else if (str.startsWith("top")) {
+				int val;
+				try {
+					val = st.top();
+					if (val != -1) {
+						System.out.println(val);
+					}
+				} catch (StackException e) {
+					System.out.println(e.getMessage());
+				}
+				
+			} else if (str.startsWith("size")) {
+				System.out.println(st.size());
+			} else if (str.startsWith("display")) {
+				st.display();
+			}
+			str = br.readLine();
 		}
 	}
 	
