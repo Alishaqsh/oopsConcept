@@ -1,7 +1,7 @@
 package com.pepecode.stack;
 
 //custom Exception Handling
-public class StackException extends Throwable {
+public class StackException extends Exception {
 
 	public StackException() {
 		super();
