@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class StackImplementation {
+public class Client {
 	
 	public static void main(String[] args) {
 		
@@ -13,12 +13,12 @@ public class StackImplementation {
 			try {
 			n = Integer.parseInt(br.readLine());
 			//Run time  polymorphism 
-		    StackInteface st = new CustomStack(n);
+		    IStack st = new CustomStack(n);
 
 		    executeStack(br, st);
 		    
 		  //Run time  polymorphism 
-		    StackInteface st2 = new DynamicStack(n);
+		    IStack st2 = new DynamicStack(n);
 
 		    executeStack(br, st2);
 		    
@@ -30,7 +30,7 @@ public class StackImplementation {
 		  }
 	
 	//complitime polymorphism
-	private static void executeStack(BufferedReader br, StackInteface st) throws IOException {
+	private static void executeStack(BufferedReader br, IStack st) throws IOException {
 		String str = br.readLine();
 		while (str.equals("quit") == false) {
 			if (str.startsWith("push")) {
@@ -72,7 +72,7 @@ public class StackImplementation {
 	}
 	
 	//complitime polymorphism
-	private static void executeStack(StackInteface st) throws IOException, StackException {
+	private static void executeStack(IStack st) throws IOException, StackException {
 		st.push(10);
 		st.push(20);
 		st.push(5);

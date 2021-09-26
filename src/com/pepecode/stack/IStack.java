@@ -1,7 +1,7 @@
 package com.pepecode.stack;
 
 //abstraction
-public interface StackInteface {
+public interface IStack {
 	
 	void display();
 	int size();

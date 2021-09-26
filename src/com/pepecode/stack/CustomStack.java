@@ -1,6 +1,6 @@
 package com.pepecode.stack;
 
-public class CustomStack implements StackInteface {
+public class CustomStack implements IStack {
 
 	NormalStack st = null;
 	
