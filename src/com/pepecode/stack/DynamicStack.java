@@ -2,11 +2,13 @@ package com.pepecode.stack;
 
 public class DynamicStack extends CustomStack{
 
-
+	
+	public DynamicStack() {
+		super();
+	}
 	public DynamicStack(int cap) {
 		super(cap);
 	}
-
 
 
 	@Override
@@ -17,7 +19,6 @@ public class DynamicStack extends CustomStack{
 			int[] temp = new int[2 * data.length];
 			for (int i = 0; i < data.length; i++) {
 				temp[i] = data[i];
-
 			}
 			tos++;
 			st.setTos(tos);

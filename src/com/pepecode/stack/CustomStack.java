@@ -3,7 +3,10 @@ package com.pepecode.stack;
 public class CustomStack implements StackInteface {
 
 	NormalStack st = null;
-
+	
+	public CustomStack() {
+		st = new NormalStack(new int[16], -1, 0);
+	}
 	public CustomStack(int cap) {
 		st = new NormalStack(new int[cap], -1, 0);
 	}
